@@ -99,5 +99,22 @@ export function makeMath(addends: number[]): string {
  * And the array [1, 9, 7] would become [1, 9, 7, 17]
  */
 export function injectPositive(values: number[]): number[] {
-    return [];
+    if (values.every((value: number): boolean => value > 0)) {
+        return [
+            ...values,
+            values.reduce(
+                (sum: number, value: number): number => sum + value,
+                0,
+            ),
+        ];
+    }
+    let negIndex = values.findIndex((value) => value < 0);
+    let sum = values
+        .slice(0, negIndex)
+        .reduce((sum: number, value: number): number => sum + value, 0);
+    return [
+        ...values.slice(0, negIndex + 1),
+        sum,
+        ...values.slice(negIndex + 1),
+    ];
 }
