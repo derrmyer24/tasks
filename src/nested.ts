@@ -222,7 +222,23 @@ export function editOption(
     targetOptionIndex: number,
     newOption: string,
 ): Question[] {
-    return [];
+    return questions.map(
+        (question: Question): Question =>
+            question.id === targetId ?
+                {
+                    ...question,
+                    options:
+                        targetOptionIndex === -1 ?
+                            [...question.options, newOption]
+                        :   question.options.map(
+                                (option: string, index: number): string =>
+                                    index === targetOptionIndex ? newOption : (
+                                        option
+                                    ),
+                            ),
+                }
+            :   question,
+    );
 }
 
 /***
