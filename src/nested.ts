@@ -33,7 +33,10 @@ export function findQuestion(
     questions: Question[],
     id: number,
 ): Question | null {
-    return null;
+    return (
+        questions.find((question: Question): Boolean => question.id == id) ??
+        null
+    );
 }
 
 /**
