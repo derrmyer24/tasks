@@ -1,10 +1,11 @@
 import React from "react";
 import "./App.css";
-import catPhoto from "./pexels-peter-xie-371876898-34574274.jpg";
-import { Button } from "react-bootstrap";
-import { Container } from "react-bootstrap";
-import { Row } from "react-bootstrap";
-import { Col } from "react-bootstrap";
+import { ChangeType } from "./components/ChangeType";
+import { RevealAnswer } from "./components/RevealAnswer";
+import { StartAttempt } from "./components/StartAttempt";
+import { TwoDice } from "./components/TwoDice";
+import { CycleHoliday } from "./components/CycleHoliday";
+import { Counter } from "./components/Counter";
 
 function App(): React.JSX.Element {
     return (
@@ -14,42 +15,18 @@ function App(): React.JSX.Element {
                 Hello World
                 <p>Derrick was here!</p>
             </header>
-            <img
-                src={catPhoto}
-                alt="free use cute cat photo"
-                width="500"
-                height="300"
-            />
-            <p>Shopping List</p>
-            <ul>
-                <li>Bread</li>
-                <li>Cheese</li>
-                <li>Milk</li>
-            </ul>
-            <Button
-                onClick={() => {
-                    console.log("Hello World!");
-                }}
-            >
-                Log Hello World
-            </Button>
-            <Container>
-                <Row>
-                    <Col>
-                        <div
-                            className="rectangle"
-                            style={{ backgroundColor: "red" }}
-                        />
-                    </Col>
-                    <Col>
-                        <div
-                            className="rectangle"
-                            style={{ backgroundColor: "red" }}
-                        />
-                    </Col>
-                    q
-                </Row>
-            </Container>
+            <hr></hr>
+            <Counter></Counter>
+            <hr />
+            <RevealAnswer></RevealAnswer>
+            <hr />
+            <StartAttempt></StartAttempt>
+            <hr />
+            <TwoDice></TwoDice>
+            <hr />
+            <ChangeType></ChangeType>
+            <hr />
+            <CycleHoliday></CycleHoliday>
         </div>
     );
 }
