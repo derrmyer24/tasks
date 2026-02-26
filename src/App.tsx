@@ -20,14 +20,13 @@ function App(): React.JSX.Element {
             <hr />
             <RevealAnswer></RevealAnswer>
             <hr />
-            {/*
             <StartAttempt></StartAttempt>
             <hr />
             <TwoDice></TwoDice>
             <hr />
             <ChangeType></ChangeType>
             <hr />
-            <CycleHoliday></CycleHoliday> */}
+            <CycleHoliday></CycleHoliday>
         </div>
     );
 }
