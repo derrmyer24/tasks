@@ -36,11 +36,12 @@ export function ChangeColor(): React.JSX.Element {
                     />
                 ))}
             </Form>
+            You have chosen
             <div
                 data-testid="colored-box"
                 style={{ backgroundColor: ourColor }}
             >
-                You have chosen {ourColor}
+                {ourColor}
             </div>
             .
         </div>
